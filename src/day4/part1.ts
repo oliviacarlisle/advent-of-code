@@ -13,14 +13,12 @@ console.log('matrix size', `${matrix.length} by ${matrix[0].length}`)
 
 const WORD = 'XMAS';
 
-console.log(WORD.split('').reverse().join(''))
-
 let count = 0;
+
+const wordReverse = WORD.split('').reverse().join('');
 
 for (let r = 0; r < matrix.length; r++) {
   for (let c = 0; c < matrix[0].length; c++) {
-    const wordReverse = WORD.split('').reverse().join('');
-
     count += checkAll(matrix, WORD, r, c);
     count += checkAll(matrix, wordReverse, r, c);
   }
